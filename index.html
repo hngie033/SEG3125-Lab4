@@ -1,0 +1,140 @@
+<!-- This file contains many elements adapted from the online tutoral -->
+<!-- on Bootstrap 4 as found here: https://www.w3schools.com/bootstrap4/default.asp -->
+
+<!-- Images source: -->
+<!-- jule.jpg taken from https://www.freepik.com/premium-vector/cartoon-successful-hairdresser_3951066.htm -->
+<!-- Erwind.jpb https://www.kijiji.ca/v-construction-trades-jobs/winnipeg/bicycle-mechanic/1499188319 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- The head should contain an appropriate title for your site -->
+<head>
+    <title>COOL BIKEZ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Style sheet (CSS) and JavaScript scripts necessary to use Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>    
+
+    <!-- Your own additional style sheet -->
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+</head>
+
+
+<body>
+
+    <!-- A different approach would be to make the whole staff information collapsible -->
+    <!-- Here a block button (taking the full width) opens/closes the collapsible -->
+    <!-- Here a single card is used, but card columns could be used -->
+
+    <!-- Collapsible with multiple items - accordion -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_collapse.asp -->
+    <!-- As we want to do a vertical navigation better suited for mobile design, an accordion pattern -->
+    <!-- could work well.  You can use other patterns too.  This is just an example. -->
+    <div class="container">
+        <div class="container-md p-3 my-3 border bg-success text-white">
+            	<h1>COOL BIKEZ</h1>
+            	<h2>Bicycle sale and repair!</h2>
+		<p>10364 Trianon Place<br>Wellington, FL 33449 US</p>
+        </div>
+	<div class="container">
+	        <a href="#mechanics" class="btn btn-warning btn-block" data-toggle="collapse">Meet our experts!</a>
+	        <div id="mechanics" class="collapse">
+	            <div class="card bg-success" style="width:200px">
+	                <img class="card-img-top" src="images/Robert.jpg" alt="Card image" style="width:100%">
+	                <div class="card-body">
+	                    <h4 class="card-title">Robert</h4>
+	                    <p class="card-text">Robert is a salesman of award-winning customer service. He can easily match your customer needs and sell your the bike meant just for you.</p>
+	                </div>
+	            </div>
+                    <div class="card bg-success" style="width:200px">
+	                <img class="card-img-top" src="images/Van.jpg" alt="Card image" style="width:100%">
+	                <div class="card-body">
+	                    <h4 class="card-title">Van</h4>
+	                    <p class="card-text">Van is our bike engineer. He knows all bikes inside-and-out and can definitely get the best performance out of your machine.</p>
+	                </div>
+	            </div>
+		    <div class="card bg-success" style="width:200px">
+	                <img class="card-img-top" src="images/Winkle.jpg" alt="Card image" style="width:100%">
+	                <div class="card-body">
+	                    <h4 class="card-title">Winkle</h4>
+	                    <p class="card-text">Winkle is our in-house bike historian. He can tell you about the historical significance of any of the luxury brands we carry in our store.</p>
+	                </div>
+	            </div>
+	        </div><br>
+	</div>
+	<h3>Book an appointment!</h3>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseService">Choose a service</a>
+                </div>
+                <div id="collapseService" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Please specify which of our services you require.</p>
+			<label>
+				<input type="radio" name="service" value="consultation">
+  				<img src="images/Consultation.png">
+			</label>
+			<label>
+		  		<input type="radio" name="service" value="purchase">
+  				<img src="images/Purchase.png">
+			</label>
+			<label>
+		  		<input type="radio" name="service" value="repair">
+  				<img src="images/Repair.png">
+			</label>
+                    </div>
+                </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseDate">Choose a date</a>
+                </div>
+                <div id="collapseDate" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Please specify when you would like your appointment.</p>
+                        <!-- Bootstrap has various input components. Some examples are given here: -->
+                        <!-- Component shown here: https://v4-alpha.getbootstrap.com/components/forms/#textual-inputs -->
+                        <div class="form-group row">
+                            <label for="dateTimeInput" class="col-2 col-form-label">MM/DD/YYYY hh:mm</label>
+                            <div class="col-10">
+                                <input class="form-control" type="datetime-local" value="2011-08-19T13:45:00" id="dateTimeInput">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseClientInfo">Your info</a>
+                </div>
+                <div id="collapseClientInfo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        <p>Please leave us with your information.</p>
+			Full name: <input type="text" id="fname" name="fname" placeholder="First name"> <input type="text" id="lname" name="lname" placeholder="Last name"><br><br>
+                        Phone number: <input type="tel" id="phone" name="phone" placeholder="(541) 754-3010" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required><br><br>
+			Email address: <input type="text" id="email" name="email" placeholder="vanilla.ice@email.com"><br><br>
+			<button type="button" class="btn btn-success">Book appointment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+	<br><br><br>
+	<div class="footer">
+  		<p class="text-success">Website designed by Hansel-Timon Ngien</p>
+	</div>
+</body>
+</html>
+
+<!--
+Images used:
+https://m.media-amazon.com/images/M/MV5BMWY2YWU0NmMtNmQ3Yy00YmQyLTkxZWQtN2I4YmU0MjNjMWI4XkEyXkFqcGdeQXVyNjQ4ODE4MzQ@._V1_.jpg
+https://www.moneymakers.com/wp-content/uploads/2018/11/vanilla-ice.jpg
+https://m.media-amazon.com/images/M/MV5BMWY2YWU0NmMtNmQ3Yy00YmQyLTkxZWQtN2I4YmU0MjNjMWI4XkEyXkFqcGdeQXVyNjQ4ODE4MzQ@._V1_.jpg
+https://us.anteagroup.com/sites/default/files/styles/width1520/public/ag05784.jpg?itok=I3g2Y3XE
+https://www.spinlister.com/blog/wp-content/uploads/2017/01/best-bike-shop-5.jpg
+https://i.ytimg.com/vi/CHaTWk6uqd8/maxresdefault.jpg
